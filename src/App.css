@@ -1,0 +1,126 @@
+/* custom styles */
+.App {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* touch handling on mobile */
+* {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* card movements smoother */
+.card-transition {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* stacking effect */
+.card-stack {
+  perspective: 1000px;
+}
+
+/* Animation for swipe out */
+@keyframes swipeOut {
+  to {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+}
+
+.swipe-out-right {
+  animation: swipeOut 0.5s forwards;
+}
+
+@keyframes swipeOutLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+}
+
+.swipe-out-left {
+  animation: swipeOutLeft 0.5s forwards;
+}
+
+@keyframes swipeOutUp {
+  to {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+}
+
+.swipe-out-up {
+  animation: swipeOutUp 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
+@keyframes springBack {
+  0% {
+    transform: translateX(var(--tx)) translateY(var(--ty)) rotate(var(--tr));
+  }
+  70% {
+    transform: translateX(calc(var(--tx) * -0.2)) translateY(calc(var(--ty) * -0.2)) rotate(calc(var(--tr) * -0.2));
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 1.5s forwards;
+}
+
+.animate-spring-back {
+  --tx: 0px;
+  --ty: 0px;
+  --tr: 0deg;
+  animation: springBack 0.5s ease-out forwards;
+}
+
+.animate-card-entrance {
+  animation: cardEntrance 0.5s ease-out forwards;
+}
+
+/* global styles */
+body {
+  overscroll-behavior: none; /* Prevents page bounce during swipes */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
