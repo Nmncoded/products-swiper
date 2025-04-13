@@ -1,5 +1,14 @@
 {
   "appId": "com.example.productsswiper",
   "appName": "ProductsSwiper",
-  "webDir": "dist"
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#F8F8F8",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP"
+    }
+  }
 }
