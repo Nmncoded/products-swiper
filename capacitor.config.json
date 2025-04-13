@@ -1,5 +1,5 @@
 {
   "appId": "com.example.productsswiper",
   "appName": "ProductsSwiper",
-  "webDir": "build"
+  "webDir": "dist"
 }
